@@ -1,32 +1,26 @@
 
-const value = document.getElementById("semid").value;
-
-
 fetch('marks.json').then((response) => response.json()).then((data) => {
-    const jsondata = document.getElementById('marks');
-    displayElement.innerHTML = `
-    subject : {data.}`
-    }).catch((error) => console.log('error'));
+}).catch((error) => console.log('error'));
 
 
 function calculateCGPA() {
-    var grades = [];
-    for (var i = 1; i <= 23; i++) {
-        grades.push(parseInt(document.getElementById('course' + i).value));
-    }
-    for (var i = 1; i <= 13; i++) {
-        grades.push(parseInt(document.getElementById('lab' + i).value));
-    }
+var grades = [];
+for (var i = 1; i <= 23; i++) {
+    grades.push(parseInt(document.getElementById('course' + i).value));
+}
+for (var i = 1; i <= 13; i++) {
+    grades.push(parseInt(document.getElementById('lab' + i).value));
+}
 
-    var credits = [3, 3, 4, 3, 3, 3, 2, 2, 2, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 3, 4, 3, 3, 3];
+var credits = [3, 3, 4, 3, 3, 3, 2, 2, 2, 3, 3, 4, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 3, 4, 3, 3, 3];
 
-    var totalCredits = 98;
-    var totalGradePoints = 0;
+var totalCredits = 98;
+var totalGradePoints = 0;
 
-    for (var i = 0; i < grades.length; i++) {
-        totalGradePoints += grades[i] * credits[i];
-    }
+for (var i = 0; i < grades.length; i++) {
+    totalGradePoints += grades[i] * credits[i];
+}
 
-    var cgpa = totalGradePoints / totalCredits;
-    document.getElementById("result").innerText = "Your CGPA is: " + cgpa.toFixed(2);
+var cgpa = totalGradePoints / totalCredits;
+document.getElementById("result").innerText = "Your CGPA is: " + cgpa.toFixed(2);
 }
