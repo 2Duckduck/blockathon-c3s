@@ -1,7 +1,11 @@
 
+const value = document.getElementById("semid").value;
+
+
 fetch('marks.json').then((response) => response.json()).then((data) => {
     const jsondata = document.getElementById('marks');
-    displayElement.innerHTML = ``
+    displayElement.innerHTML = `
+    subject : {data.}`
     }).catch((error) => console.log('error'));
 
 
