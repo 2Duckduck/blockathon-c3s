@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        
+        }
+        
+        
+        
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            
+        }
+        .header {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.9em;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+    <title>CGPA Calculator</title>
+    <link rel="icon" href="cal.jpg">
+    
+        <style>
+            /* Position the student information at the top right corner */
+            .student-info {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                text-align: right;
+            }
+        </style>
+    </head>
+    
+    </html>
+
+
+<body>
+    
+    
+    <center>
+       
+    <div class="container">
+        <div class = "sem">
+            <h2 style="color: blue;">SEMESTER 1</h2>
+            <form id="cgpaForm">
+            <table>
+                <!-- Semester 1 Courses -->
+                <tr>
+                    <td>COMMUNICATIVE ENGLISH</td>
+                    <td>
+                        <select id="course1">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>HERITAGE OF TAMILS</td>
+                    <td>
+                        <select id="course2">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>MATRICES AND CALCULUS</td>
+                    <td>
+                        <select id="course3">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ENGINEERING PHYSICS</td>
+                    <td>
+                        <select id="course4">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ENGINEERING CHEMISTRY</td>
+                    <td>
+                        <select id="course5">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PSPP</td>
+                    <td>
+                        <select id="course6">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Semester 1 Labs -->
+                <tr>
+                    <td>PHYSICS AND CHEMISTRY LABORATORY</td>
+                    <td>
+                        <select id="lab1">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PSPP LAB</td>
+                    <td>
+                        <select id="lab2">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>COMMUNICATIVE ENGLISH LAB</td>
+                    <td>
+                        <select id="lab3">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+
+            <h2 style="color: blue;">SEMESTER 2</h2>
+            <table>
+                <!-- Semester 2 Courses -->
+                <tr>
+                    <td>TAMIL AND TECHNOLOGY</td>
+                    <td>
+                        <select id="course7">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TECHNICAL ENGLISH</td>
+                    <td>
+                        <select id="course8">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>SNM</td>
+                    <td>
+                        <select id="course9">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ENGINEERING GRAPHICS</td>
+                    <td>
+                        <select id="course10">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PCSE</td>
+                    <td>
+                        <select id="course11">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PROGRAMMING IN C</td>
+                    <td>
+                        <select id="course12">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ESS</td>
+                    <td>
+                        <select id="course13">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Semester 2 Labs -->
+                <tr>
+                    <td>TECHNICAL ENGLISH LABORATORY</td>
+                    <td>
+                        <select id="lab4">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>PROGRAMMING IN C LABORATORY</td>
+                    <td>
+                        <select id="lab5">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ENGINEERING PRACTICES LABORATORY</td>
+                    <td>
+                        <select id="lab6">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <h2 style="color: blue;">SEMESTER 3</h2>
+            <table>
+                <!-- Semester 3 Courses -->
+                <tr>
+                    <td>Digital Principles and Computer Organization</td>
+                    <td>
+                        <select id="course14">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Foundations of Data Science</td>
+                    <td>
+                        <select id="course15">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Data Structures</td>
+                    <td>
+                        <select id="course16">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Object Oriented Programming</td>
+                    <td>
+                        <select id="course17">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Operating System</td>
+                    <td>
+                        <select id="course18">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Semester 3 Labs -->
+                <tr>
+                    <td>Data Structures Laboratory</td>
+                    <td>
+                        <select id="lab7">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Object Oriented Programming Laboratory</td>
+                    <td>
+                        <select id="lab8">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Data Science Laboratory</td>
+                    <td>
+                        <select id="lab9">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantitative Aptitude & Verbal Reasoning</td>
+                    <td>
+                        <select id="lab10">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+
+            <h2 style="color: blue;">SEMESTER 4</h2>
+            <table>
+                <!-- Semester 4 Courses -->
+                <tr>
+                    <td>Software Engineering</td>
+                    <td>
+                        <select id="course19">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Design and Analysis of Algorithms</td>
+                    <td>
+                        <select id="course20">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Discrete Mathematics</td>
+                    <td>
+                        <select id="course21">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Database Management Systems</td>
+                    <td>
+                        <select id="course22">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Java Programming</td>
+                    <td>
+                        <select id="course23">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Semester 4 Labs -->
+                <tr>
+                    <td>Database Management Systems Laboratory</td>
+                    <td>
+                        <select id="lab11">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Java Programming Laboratory</td>
+                    <td>
+                        <select id="lab12">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="0">F</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Quantitative Aptitude & Behavioural Skills</td>
+                    <td>
+                        <select id="lab13">
+                            <option value="10">O</option>
+                            <option value="9">A+</option>
+                            <option value="8">A</option>
+                            <option value="7">B+</option>
+                            <option value="6">B</option>
+                            <option value="4">C</option>
+                            <option value="3">0</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div id = "marks"></div>
+        <div></div>
+        <button class="button" onclick="calculateCGPA()">Calculate CGPA</button>
+
+        <div id="result" class="result"></div>
+    </div>
+    </center>
+
+    <script src = "script.js"></script>
+    <script src = "h.py"></script>
+</body>
+</html>
